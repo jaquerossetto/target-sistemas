@@ -18,6 +18,8 @@ Ao final do processamento, qual será o valor da variável SOMA?
 */
 
 //Resolução:
+using System.ComponentModel.DataAnnotations;
+
 Console.WriteLine("Questão 1:");
 
 int indice = 13;
@@ -45,6 +47,29 @@ Esse número pode ser informado através de qualquer entrada de sua preferência
 
 //Resolução:
 Console.WriteLine(Environment.NewLine + "Questão 2:");
+int numAnterior = 0;
+int numAtual = 1;
+int fibonacci;
+int test;
+
+//captura o número a ser testado
+Console.WriteLine("Informe um número para saber se ele pertence à sequência de Fibonacci: ");
+int numTeste = int.Parse(Console.ReadLine());
+
+
+//loop percorre a sequencia de fibonacci comparando os numeros ao que foi informado
+for (int i = 0; i < 100; i++)
+{
+    fibonacci = numAnterior + numAtual;
+    //Console.WriteLine(fibonacci);     *essa linha é só para printar todos os numeros da sequencia fibonacci caso precise
+    numAnterior = numAtual;
+    numAtual = fibonacci;
+
+    if (numTeste == fibonacci)
+    {
+      Console.WriteLine("O número " + numTeste + " pertence à sequência de Fibonacci!");
+    }
+}
 
 
 //---------------------------------------------------------------------------------------------------------------------
